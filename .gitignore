@@ -1,0 +1,22 @@
+# Crear .gitignore solo con archivos que NO necesita la API
+cat > .gitignore << 'EOF'
+# Dependencias que se instalan con composer/npm
+/vendor
+/node_modules
+
+# Archivos de entorno (contienen credenciales)
+.env
+.env.local
+.env.*.local
+
+# Logs y caché temporal
+*.log
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Archivos problemáticos
+src/.spdx-laravel.json
+.spdx-laravel.json
+EOF
